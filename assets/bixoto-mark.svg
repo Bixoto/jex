@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.36 61.48" width="292.36" height="61.48" role="img" aria-label="Bixoto">
-  <!-- Bixoto wordmark — verbatim letterform paths from the site header component
-       (bixoto_front/src/lib/components/partials/Logo.svelte), fill = brand orange #FF4200
-       (the site renders it as fill: var(--main) = #FF4200). -->
+  <!-- Bixoto wordmark: verbatim letterform paths from the site header component
+       (bixoto_front/src/lib/components/partials/Logo.svelte); fill = brand orange #FF4200
+       (the same color the site applies via its main brand variable). -->
   <g fill="#FF4200">
     <path d="M268.12,13a24.24,24.24,0,1,0,24.24,24.24A24.26,24.26,0,0,0,268.12,13Zm0,35.59a11.35,11.35,0,1,1,11.35-11.35A11.36,11.36,0,0,1,268.12,48.59Z"/>
     <path d="M158.93,13a24.24,24.24,0,1,0,24.23,24.24A24.26,24.26,0,0,0,158.93,13Zm0,35.59a11.35,11.35,0,1,1,11.34-11.35A11.36,11.36,0,0,1,158.93,48.59Z"/>
