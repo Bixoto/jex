@@ -347,6 +347,7 @@ The base weights are under Google's Gemma terms of use; the Decision Index suite
 ## Links
 
 - **Engine repository** — https://github.com/Bixoto/jex
+- **Model card (HF)** — https://huggingface.co/Bixoto/jex
 - **Results dataset** — https://huggingface.co/datasets/Bixoto/decision-index-results (`runs/jex-1.0/`, revision `7efebd4c…`)
 - **Submission PR** — https://github.com/apolinario/decision-index/pull/153
 - **Decision Index kit** — https://github.com/apolinario/decision-index
