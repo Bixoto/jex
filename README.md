@@ -14,7 +14,7 @@
   <img alt="Decision Index 0.3 public index 60.29" src="https://img.shields.io/badge/Decision%20Index%200.3-60.29-34C9A2?style=flat-square">
   <img alt="base model frozen" src="https://img.shields.io/badge/base-gemma--4--31B--it%20%C2%B7%20frozen-5B6472?style=flat-square">
   <img alt="complete 140178 of 140178" src="https://img.shields.io/badge/run-140%2C178%20%2F%20140%2C178-FF4200?style=flat-square">
-  <img alt="license TBD" src="https://img.shields.io/badge/license-TBD-lightgrey?style=flat-square">
+  <img alt="license Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square">
 </p>
 
 ---
@@ -323,9 +323,9 @@ The reproduction inputs — the frozen base capture, the fitted `table.pkl`, and
 
 ## License
 
-<!-- LICENSE TBD -->
+Apache License 2.0 — see [`LICENSE`](LICENSE) for the full text. © 2026 Bixoto.
 
-The repository license has not been chosen yet. The base weights are under Google's Gemma terms of use; the Decision Index suite is evaluation data under its own upstream terms and is **not** redistributed here.
+The base weights are under Google's Gemma terms of use; the Decision Index suite is evaluation data under its own upstream terms and is **not** redistributed here.
 
 ---
 
