@@ -13,7 +13,7 @@ never modified; only `choice` (rule space) and cat59 `noul` are overridden.
 """
 import sys, os, json, gzip, math, pickle, collections
 
-BASE = "/tmp/opencode/submission04/v1.xplus/levers"
+BASE = os.path.dirname(os.path.abspath(__file__))
 FINAL = BASE
 sys.path.insert(0, os.path.join(BASE, "calopt60"))
 sys.path.insert(0, os.path.join(BASE, "bundle60"))
@@ -27,8 +27,8 @@ from decision_index.suite.io import Suite   # noqa: E402
 from decision_index.pipeline import score_run_v02  # noqa: E402
 from scorelib import inv_tbo, rule_choice   # noqa: E402
 
-CAP = "/tmp/opencode/submission04/v1.xplus/levers/inputs/wave1-v1x-results.jsonl.gz"
-SUITE = "/tmp/opencode/submission03/suite03"
+CAP = os.path.join(BASE, "inputs", "wave1-v1x-results.jsonl.gz")
+SUITE = os.environ.get("SUITE", "/tmp/opencode/submission03/suite03")
 
 VARIANTS = {
     "base":     dict(fold=False, c59=False, r42=False, r20=False, r56=False, r21=False),

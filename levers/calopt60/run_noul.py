@@ -2,7 +2,7 @@
 """cat59 (RAGTruth noul) calibration refinement: OOF isotonic/Platt/binned/
 threshold/shrinkage + kit rescore + refit-bootstrap CI."""
 import sys, os, json, pickle, time, random, collections, bisect, math
-sys.path.insert(0, "/tmp/opencode/submission04/v1.xplus/levers/calopt60")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "calopt60"))
 import calib_core as C
 import metrics_local as M
 

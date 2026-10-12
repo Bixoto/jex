@@ -35,20 +35,29 @@ are overridden.
 - `bundle60/scorekit.py`, `calopt60/*`, `mining60/work/*`, `fold60/*` — the reused
   implementations (verbatim, with provenance hashes in `PROVENANCE.sha256`).
 
-## Inputs required to re-run (not shipped here, to stay small)
+## Inputs required to re-run (shipped in the results dataset)
 
-These are the frozen derived inputs the original run used; restore them from the
-banked work tree before running:
+Restore the frozen derived inputs with `fetch_inputs.sh` (or download manually
+from `J-I-B/decision-index-results` → `runs/jex-1.0/inputs/`):
 
-| path (relative to this dir) | source (banked, read-only) | size |
-|---|---|---|
-| `inputs/wave1-v1x-results.jsonl.gz` | `/tmp/opencode/phase8/v1x-capture/fetched/wave1-v1x/results.jsonl.gz` | ~90 MB |
-| `bundle60/table.pkl` | `/tmp/opencode/phase8/v10/bundle60/table.pkl` | ~70 MB |
-| `fold60/results-folded.jsonl.gz` | `/tmp/opencode/phase8/v10/fold60/results-folded.jsonl.gz` | ~87 MB |
+| path (relative to this dir) | dataset path | size (B) | sha256 |
+|---|---|---:|---|
+| `inputs/wave1-v1x-results.jsonl.gz` | `runs/jex-1.0/inputs/wave1-v1x-results.jsonl.gz` | 93,623,397 | `59f27834802f5cab7aff6fd6fea2dfc43fca34fac48f22d0a0ec71de6807dee1` |
+| `bundle60/table.pkl` | `runs/jex-1.0/inputs/table.pkl` | 73,658,027 | `cf241d59f220c6fd65c6ec5ca6b2562e788e50e3fa2b94998bd3e0d014577107` |
+| `fold60/results-folded.jsonl.gz` | `runs/jex-1.0/inputs/results-folded.jsonl.gz` | 91,550,294 | `5c9b96ae45a9f7b0ad810cab7e704fdb82de6203ea60e7ea12122ecd971a2165` |
 
-`KIT`/`SUITE` in the copied scripts still point at the frozen
-`/tmp/opencode/submission03/{kit03,suite03}` (maintainers supply the kit); the
-`phase8/v10` paths have been rewritten to this package root.
+```bash
+bash fetch_inputs.sh          # -> inputs/, bundle60/table.pkl, fold60/results-folded.jsonl.gz
+```
+
+Construction/provenance of each input: `../INPUTS.md`. Shipping/licence screen:
+`../REPRO-INPUTS.md`.
+
+The **suite** and **kit** are not ours to redistribute. `KIT`/`SUITE` in the
+packaged scripts still point at the frozen `/tmp/opencode/submission03/{kit03,suite03}`;
+supply the official `apolinario/decision-index@62d2f51` checkout (kit + suite03)
+and set `PYTHONPATH`, or edit those two constants. The `phase8/v10` paths have
+been rewritten to this package root.
 
 ## Result
 

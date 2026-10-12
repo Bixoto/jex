@@ -10,10 +10,10 @@ Rule path mirrors engine-v1x: recover the working (pre-TBO) distribution from th
 emitted probabilities + emitted_temperature, then
   choice = P  if logit(p_work[P]) >= tau  else argmax over non-P keys.
 """
-import gzip, json, math, sys, collections
+import gzip, json, math, sys, os, collections
 from pathlib import Path
 
-KIT = "/tmp/opencode/submission03/kit03"
+KIT = os.environ.get("KIT", "/tmp/opencode/submission03/kit03")
 if KIT not in sys.path:
     sys.path.insert(0, KIT)
 
@@ -23,8 +23,9 @@ from decision_index.scoring import report as R
 from decision_index.scoring import added as A
 from decision_index.scoring import index02
 
-CAPTURE = "/tmp/opencode/phase8/v1x-capture/fetched/wave1-v1x/results.jsonl.gz"
-SUITE = "/tmp/opencode/submission03/suite03"
+CAPTURE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                       "inputs", "wave1-v1x-results.jsonl.gz")
+SUITE = os.environ.get("SUITE", "/tmp/opencode/submission03/suite03")
 
 
 def sig_of(keys):

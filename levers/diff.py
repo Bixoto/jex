@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Per-catalog diff full vs base and full vs fold_only."""
 import json, os
-F = "/tmp/opencode/submission04/v1.xplus/levers/finalstack"
+F = os.path.dirname(os.path.abspath(__file__))
 def cats(name):
     s = json.load(open(os.path.join(F, "score-" + name, "scores.json")))
     return {n: (b.get("index_raw"), b.get("index_skill")) for n, b in s["benchmarks"].items()}, s["decision_index"]

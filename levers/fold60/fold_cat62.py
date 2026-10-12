@@ -17,8 +17,9 @@ counters/receipts json.
 """
 import gzip, json, math, collections, os, sys
 
-CAP = "/tmp/opencode/phase8/v1x-capture/fetched/wave1-v1x/results.jsonl.gz"
-OUTDIR = "/tmp/opencode/submission04/v1.xplus/levers/fold60"
+CAP = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                   "inputs", "wave1-v1x-results.jsonl.gz")
+OUTDIR = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(OUTDIR, "results-folded.jsonl.gz")
 
 PHRASE = "Which response should the assistant give to the user's question, given the available tools?"

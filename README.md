@@ -32,9 +32,10 @@ ENGINE-PACKAGE.md  maintainer-runnability package description
 SUBMISSION.md      one-page submission summary
 DISCLOSURES.md     mandatory disclosures (lever provenance, fitting, determinism, rollback)
 LADDER.md          cumulative ladder + leave-one-out checks
-RUN-REPRO.md       exact re-score command + file hashes
+REPRO.md           full chain: fetch inputs -> run levers -> re-score 60.29
+REPRO-INPUTS.md    what ships where, what is documented-only, licence screen
+INPUTS.md          exact construction & provenance of each reproduction input
 LATENCY-CERTIFICATE.md  S1 certified latency (median 116.4 / mean 369.6 / p80 319.9 ms, n=750)
-NOT-INCLUDED.md    what is deliberately not shipped (D3: raw lever inputs)
 ```
 
 ## Ladder (kit03, 0.3)
@@ -51,17 +52,21 @@ re-run `levers/run_variants.py` with a flag `False`; whole stack off → base 59
 
 ## Reproduce
 
-Re-score the submitted results file (should reproduce 60.29 bit-exactly):
+Fetch the shipped lever inputs, rebuild the combined file, then re-score it
+(should reproduce 60.29 bit-exactly):
 
 ```bash
+bash levers/fetch_inputs.sh        # inputs from runs/jex-1.0/inputs/
+bash levers/build_combined.sh      # -> levers/results-combined.jsonl.gz
 PYTHONPATH=<kit03> python -m decision_index.cli score \
   --edition 0.3 --suite-dir <suite03> \
   --results runs/jex-1.0/results-combined.jsonl.gz --out runs/jex-1.0/score
 ```
 
-See `RUN-REPRO.md` and `ENGINE-PACKAGE.md` for the full commands and settings.
-The raw inputs needed to rebuild the lever overlay from scratch are **not**
-included here — see `NOT-INCLUDED.md`.
+See `REPRO.md` for the full chain and `ENGINE-PACKAGE.md` for run settings.
+The raw lever inputs now **ship** in the results dataset
+(`runs/jex-1.0/inputs/`) — see `REPRO-INPUTS.md` and `INPUTS.md`. Only the
+benchmark suite and kit are documented-only (supplied by the maintainers).
 
 ## Declared limits
 

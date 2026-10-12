@@ -2,21 +2,23 @@
 # columns: packaged_sha256  packaged_path  <-  source_path  source_sha256
 # source work tree: /tmp/opencode/phase8/v10 (read-only, never modified)
 #
-addeda20abedcedbe1e59b30f404bdaaea46d8811fe87994d9e7d8269b0e66e1  final_common.py  <-  /tmp/opencode/phase8/v10/finalstack/final_common.py  82c07a3fa8e79890bc8a8f407e8ce33b5f01261d3c10816ad8b1be37520945fe
-7d4c33348c0021c40cfcf3b932358aca27ec757ad22cea5b3771a63e55bff027  run_variants.py  <-  /tmp/opencode/phase8/v10/finalstack/run_variants.py  0818806136c22a8f8d3f87f3f5095ed2cc39ea6dea0c5fde26e393984aa4024f
-8fe7fac7274691362c3b3eba4fee0820e450dad030bcc3bfd6afb22dd89111e5  build_combined.py  <-  /tmp/opencode/phase8/v10/finalstack/build_combined.py  e65a08c3130145467d53161f9995980946c2a0235e70fc4d8bd8c897c3b0319e
-a349a4c4b6ce1d1af9e179dcf23063c6bd697972451820218c4d484e5ddc2f3e  diff.py  <-  /tmp/opencode/phase8/v10/finalstack/diff.py  30bd34e701b42e1a853687da352b02d69786f644f149dbf709b4364596492e39
-432aaed4b54cf8a9bef5f196021bdd8e391f82709b956ff779fe8d93e39f3d89  bundle60/scorekit.py  <-  /tmp/opencode/phase8/v10/bundle60/scorekit.py  4c3026a924a0ce73ce99ca7eebd738fd01a1a77bf8cd2b0619b5e76a2eaadac1
-7030c8dcd8ff272169ab1d18fefe6fb54aaddb1c716041fe8f6ffb2cc8775056  calopt60/calib_core.py  <-  /tmp/opencode/phase8/v10/calopt60/calib_core.py  3e593290362b45016e35394ded8c1ee837a8878325967f9f03a66d30856e7ae0
-16806184a3ada7f3d559854287cb5896cb8f39ce331ce6dd0ca95c3e92897c37  calopt60/run_noul.py  <-  /tmp/opencode/phase8/v10/calopt60/run_noul.py  e01f26f0c82a902151fb4d474f00d5b9db4be3bc54e10bb963ece0782ba8abc5
-b4cabe5c82ca9b8c9d631ed632109046250ee8e9b5ace6883b8021368a4722c6  calopt60/metrics_local.py  <-  /tmp/opencode/phase8/v10/calopt60/metrics_local.py  b4cabe5c82ca9b8c9d631ed632109046250ee8e9b5ace6883b8021368a4722c6
-d6a6611345b0fa678dd2a3036e28e080d16beef17c33415395ce318584bf7ef5  mining60/work/base.py  <-  /tmp/opencode/phase8/v10/mining60/work/base.py  428fb0c3133fda667aeb5ad743b8215ea46585b9057bd649b8eb3e4af8edd923
-fee1f033c08368b95637cbee03a4c21187b187702eb86517b536d37d0ae2cb7e  mining60/work/scorelib.py  <-  /tmp/opencode/phase8/v10/mining60/work/scorelib.py  fee1f033c08368b95637cbee03a4c21187b187702eb86517b536d37d0ae2cb7e
-4a60924c1d0ad2dd90400d546c233c224cf1eb3565c112cf6f5650fd1bce7ec3  fold60/fold_apply.py  <-  /tmp/opencode/phase8/v10/fold60/fold_apply.py  4a60924c1d0ad2dd90400d546c233c224cf1eb3565c112cf6f5650fd1bce7ec3
-57169f889b570343bd599d4d5eef5858072236921c497e2e56106637c7cdfa90  fold60/fold_cat62.py  <-  /tmp/opencode/phase8/v10/fold60/fold_cat62.py  878b7a810438b3be8c6498f922cca57c80cec26bae4cfa9fd24e60ea26f20c1b
+682f0c9d7c773612ef4237ff3fa211153970b571a93f276960c972ad2b44ef18  final_common.py  <- /tmp/opencode/phase8/v10/finalstack/final_common.py 82c07a3fa8e79890bc8a8f407e8ce33b5f01261d3c10816ad8b1be37520945fe
+cc218f1419a23ede98f38ab56e792b6915b62f74cb0a30deff44da2ac0a21a74  run_variants.py  <- /tmp/opencode/phase8/v10/finalstack/run_variants.py 0818806136c22a8f8d3f87f3f5095ed2cc39ea6dea0c5fde26e393984aa4024f
+4f4d6053de54847f88671ee5b8cde3655bae04954ae7696f0b894f3bcd64c3e8  build_combined.py  <- /tmp/opencode/phase8/v10/finalstack/build_combined.py e65a08c3130145467d53161f9995980946c2a0235e70fc4d8bd8c897c3b0319e
+9aa372a6ba34903ff209cb1e0a4c24604f69e01ef86f3bead2ef77b9cece98e0  diff.py  <- /tmp/opencode/phase8/v10/finalstack/diff.py 30bd34e701b42e1a853687da352b02d69786f644f149dbf709b4364596492e39
+a2c93a22b3318469cfee4a9b5915ecbf7325e5a6ed975e85dcd4132d7c05bffa  bundle60/scorekit.py  <- /tmp/opencode/phase8/v10/bundle60/scorekit.py 4c3026a924a0ce73ce99ca7eebd738fd01a1a77bf8cd2b0619b5e76a2eaadac1
+3fd3fa9a795a7880beecd5d9bdc0f0fb571c7d8d61a1f1a9f6ddbb64264ce052  calopt60/calib_core.py  <- /tmp/opencode/phase8/v10/calopt60/calib_core.py 3e593290362b45016e35394ded8c1ee837a8878325967f9f03a66d30856e7ae0
+e5f791fa42a07ae526ad37e77995bed0e5bcca9bc0e363e505aadf3d03723f94  calopt60/run_noul.py  <- /tmp/opencode/phase8/v10/calopt60/run_noul.py e01f26f0c82a902151fb4d474f00d5b9db4be3bc54e10bb963ece0782ba8abc5
+b4cabe5c82ca9b8c9d631ed632109046250ee8e9b5ace6883b8021368a4722c6  calopt60/metrics_local.py  <- /tmp/opencode/phase8/v10/calopt60/metrics_local.py b4cabe5c82ca9b8c9d631ed632109046250ee8e9b5ace6883b8021368a4722c6
+37748aa1026475fc80fd1af1723d0a8685a74e3126cfce792f4a16baeafae1d1  mining60/work/base.py  <- /tmp/opencode/phase8/v10/mining60/work/base.py 428fb0c3133fda667aeb5ad743b8215ea46585b9057bd649b8eb3e4af8edd923
+d292cd50443c7d57d22685fac03708d9e57a509c4e3b3355806767cc1869ef4f  mining60/work/scorelib.py  <- /tmp/opencode/phase8/v10/mining60/work/scorelib.py fee1f033c08368b95637cbee03a4c21187b187702eb86517b536d37d0ae2cb7e
+4a60924c1d0ad2dd90400d546c233c224cf1eb3565c112cf6f5650fd1bce7ec3  fold60/fold_apply.py  <- /tmp/opencode/phase8/v10/fold60/fold_apply.py 4a60924c1d0ad2dd90400d546c233c224cf1eb3565c112cf6f5650fd1bce7ec3
+665465917df6457c49dfecd7e0badb74f7286ae59ac5d3584f14b7b2b45f4df3  fold60/fold_cat62.py  <- /tmp/opencode/phase8/v10/fold60/fold_cat62.py 878b7a810438b3be8c6498f922cca57c80cec26bae4cfa9fd24e60ea26f20c1b
 #
-# NOTE: the packaged copies differ from the sources ONLY in path rewrites:
-#   /tmp/opencode/phase8/v10            -> this levers dir
-#   phase8/v1x-capture/.../results.jsonl.gz -> levers/inputs/...
-#   FINAL = os.path.join(BASE,'finalstack') -> FINAL = BASE
-# No rule logic, threshold, or parameter was changed.
+# NOTE: the packaged copies differ from the sources ONLY in path wiring —
+# no rule logic, threshold, or parameter is changed:
+#   BASE/HERE/OUTDIR           -> resolved from __file__ (package root)
+#   CAP/CAPTURE/A1             -> <levers>/inputs/..., <levers>/fold60/...
+#   FINAL = join(BASE,'finalstack') -> FINAL = BASE
+#   KIT / SUITE / venv python  -> overridable via env (KIT=, SUITE=, PY=)
+# The per-file packaged_sha256 above reflect these rewrites.

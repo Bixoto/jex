@@ -7,8 +7,8 @@ perturb choices in memory and rescore without rewriting the 90MB capture.
 import gzip, json, os, sys, time, copy
 from pathlib import Path
 
-KIT = "/tmp/opencode/submission03/kit03"
-SUITE = "/tmp/opencode/submission03/suite03"
+KIT = os.environ.get("KIT", "/tmp/opencode/submission03/kit03")
+SUITE = os.environ.get("SUITE", "/tmp/opencode/submission03/suite03")
 if KIT not in sys.path:
     sys.path.insert(0, KIT)
 
@@ -16,7 +16,8 @@ from decision_index.suite.io import Suite            # noqa: E402
 from decision_index.pipeline import score_run_v02    # noqa: E402
 from decision_index.scoring.report import compact    # noqa: E402
 
-CAPTURE = "/tmp/opencode/submission04/v1.xplus/levers/inputs/wave1-v1x-results.jsonl.gz"
+CAPTURE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                       "inputs", "wave1-v1x-results.jsonl.gz")
 
 
 class CachedSuite:
@@ -58,6 +59,6 @@ if __name__ == "__main__":
     print(f"suite rows: {suite.n_rows}  ({time.time()-t0:.1f}s)")
     results = load_results()
     print(f"results: {len(results)}  ({time.time()-t0:.1f}s)")
-    scores, dt = compute(suite, results, "/tmp/opencode/submission04/v1.xplus/levers/mining60/work/_base_out")
+    scores, dt = compute(suite, results, os.path.join(os.path.dirname(os.path.abspath(__file__)), "_base_out"))
     print(f"score time {dt:.1f}s")
     print("index", scores["decision_index"], "scores", scores["scores"])

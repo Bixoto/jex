@@ -6,7 +6,7 @@ Stack = cat62 fold + c05best(cat59) + R42(cat42) + R20(cat20).
 Probabilities untouched; only `choice` and cat59 `noul` are overridden.
 """
 import sys, os, json, gzip, collections
-sys.path.insert(0, "/tmp/opencode/submission04/v1.xplus/levers/finalstack")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from final_common import *
 
 OUT = os.path.join(FINAL, "results-combined.jsonl.gz")

@@ -6,11 +6,12 @@ Decision-preservation contract: only rows whose banked winner == raw argmax
 may be overridden by a choice transform; rule/K2 rows preserved.
 """
 import sys, os, math, json, pickle, collections, hashlib, bisect, random
-sys.path.insert(0, "/tmp/opencode/submission04/v1.xplus/levers/bundle60")
+_LEVERS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_LEVERS, "bundle60"))
 import scorekit as K
 import metrics_local as M
 
-HERE = "/tmp/opencode/submission04/v1.xplus/levers/calopt60"
+HERE = os.path.join(_LEVERS, "calopt60")
 TABLE = K.TABLE
 load_suite_rows = K.load_suite_rows
 

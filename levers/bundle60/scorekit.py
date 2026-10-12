@@ -4,16 +4,16 @@ score with kit03's own score_run_v02, reusing one cached Suite (no large
 intermediate results files, no re-parsing the suite per variant)."""
 import gzip, json, math, pickle, sys, os, collections, hashlib, tempfile, shutil
 
-KIT = "/tmp/opencode/submission03/kit03"
+KIT = os.environ.get("KIT", "/tmp/opencode/submission03/kit03")
 sys.path.insert(0, KIT)
 
 from decision_index.suite.io import Suite
 from decision_index.pipeline import score_run_v02
 
-HERE = "/tmp/opencode/submission04/v1.xplus/levers/bundle60"
+HERE = os.path.dirname(os.path.abspath(__file__))
 TABLE = f"{HERE}/table.pkl"
 A1 = f"{HERE}/../fold60/results-folded.jsonl.gz"
-SUITE = "/tmp/opencode/submission03/suite03"
+SUITE = os.environ.get("SUITE", "/tmp/opencode/submission03/suite03")
 
 
 def fold_of(gid, nf=5):

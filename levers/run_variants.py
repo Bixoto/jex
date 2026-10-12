@@ -5,7 +5,7 @@ Outputs: finalstack/score-<variant>/{scores.json,index.json,benchmark-summary.js
 finalstack/results.json (summary), finalstack/receipts.json.
 """
 import sys, os, json, time, collections
-sys.path.insert(0, "/tmp/opencode/submission04/v1.xplus/levers/finalstack")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from final_common import *
 
 t0 = time.time()
