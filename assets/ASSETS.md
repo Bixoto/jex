@@ -27,10 +27,9 @@ them into the target repo.
 | mono | SFMono / JetBrains Mono → Menlo/Consolas | every number |
 
 Brand orange `#FF4200` and the Sofia Pro family are taken from
-`bixoto_front/static/variables.scss` and `bixoto_front/static/fonts/`. The `b` mark in
-`bixoto-mark.svg` is a geometric re-draw of `bixoto_front/static/favicon.png`
-(the raster `bixoto_ai/static/logo-white.png` is a white wordmark, invisible on light and
-unusable in a README, so the wordmark is rendered in SVG instead).
+`bixoto_front/static/variables.scss` and `bixoto_front/static/fonts/`. `bixoto-mark.svg` is
+the Bixoto wordmark — verbatim letterform paths from the site header component
+`Logo.svelte` (fill #FF4200).
 
 ---
 
@@ -39,7 +38,7 @@ unusable in a README, so the wordmark is rendered in SVG instead).
 | path | type | purpose | data source (receipt) |
 |---|---|---|---|
 | `assets/hero.svg` | hero / banner | README header: title, one-line pitch, `60.29` public index, frozen `gemma-4-31B`, readout motif | `publish/VERIFY.md` §1 · `publish/DISCLOSURES.md` §1 |
-| `assets/bixoto-mark.svg` | brand wordmark | footer / attribution, tasteful and minimal | `bixoto_front/static/favicon.png` · `variables.scss` (`--main: #ff4200`) |
+| `assets/bixoto-mark.svg` | brand wordmark | footer / attribution, tasteful and minimal | `bixoto_front/src/lib/components/partials/Logo.svelte` · `variables.scss` (`--main: #ff4200`) |
 | `assets/pipeline.svg` | architecture diagram | the engine end to end: state + typed questions → deterministic engine → single greedy step → 255-label readout → post-processing levers → answers + probabilities | `publish/PUBLISHED.md` §5 · `publish/PR-v1.xplus.md` |
 | `assets/same-checkpoint.svg` | head-to-head diagram | the cleanest comparison on the board: one frozen checkpoint, deck31b 58.19 vs Jex 60.29, **+2.10** | `FACT-BASE.md` §B.1 · `COMPETITOR-CLAIMS.md` §2.5 (deck31b) |
 | `assets/ladder.svg` | step/bar chart | the score ladder 59.48 → 59.96 → 60.09 → 60.21 → 60.29 + leave-one-outs | `publish/DISCLOSURES.md` §3 · `publish/jex-repo/LADDER.md` |
