@@ -8,7 +8,7 @@ redistribute; they are obtained from the official benchmark (documented-only).
 
 ## 1. Shipped inputs (results dataset)
 
-Repo: `J-I-B/decision-index-results` (public) → `runs/jex-1.0/inputs/`
+Repo: `Bixoto/decision-index-results` (public) → `runs/jex-1.0/inputs/`
 
 | dataset path | size (bytes) | sha256 | what it is |
 |---|---:|---|---|

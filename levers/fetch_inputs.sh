@@ -5,7 +5,7 @@
 # Requires: `hf` CLI authenticated (or anonymous read on a public dataset).
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
-REPO="${REPO:-J-I-B/decision-index-results}"
+REPO="${REPO:-Bixoto/decision-index-results}"
 REV="${REV:-}"   # optional revision pin, e.g. REV=<sha>
 
 rev_arg=()

@@ -38,7 +38,7 @@ are overridden.
 ## Inputs required to re-run (shipped in the results dataset)
 
 Restore the frozen derived inputs with `fetch_inputs.sh` (or download manually
-from `J-I-B/decision-index-results` → `runs/jex-1.0/inputs/`):
+from `Bixoto/decision-index-results` → `runs/jex-1.0/inputs/`):
 
 | path (relative to this dir) | dataset path | size (B) | sha256 |
 |---|---|---:|---|

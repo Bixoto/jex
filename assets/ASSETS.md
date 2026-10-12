@@ -8,7 +8,7 @@ them into the target repo.
 
 - **Engine repo (`github.com/J-I-B/jex`):** copy `assets/*.svg` to `assets/`. `ENGINE-README.md`
   references `assets/<name>.svg`.
-- **HF dataset (`J-I-B/decision-index-results`):** copy `assets/*.svg` to `assets/` in the
+- **HF dataset (`Bixoto/decision-index-results`):** copy `assets/*.svg` to `assets/` in the
   dataset repo; `DATASET-CARD.md` references `assets/<name>.svg`.
 
 **Design system (shared)**

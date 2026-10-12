@@ -1,7 +1,7 @@
 # REPRO.md — full reproduction chain (jex-1.0, Decision Index 0.3)
 
 Three steps: **fetch inputs → run levers → re-score 60.29**. Inputs all ship in
-`J-I-B/decision-index-results` → `runs/jex-1.0/inputs/` (see `REPRO-INPUTS.md`,
+`Bixoto/decision-index-results` → `runs/jex-1.0/inputs/` (see `REPRO-INPUTS.md`,
 `INPUTS.md`). Maintainers supply the official kit + suite.
 
 ## 0. Prerequisites
