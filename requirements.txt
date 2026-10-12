@@ -1,0 +1,5 @@
+# Engine package for maintainer re-runner (private parts), Decision Index 0.3.
+# Matches the pinned production stack.
+vllm==0.30.0
+transformers==5.14.1
+# torch is resolved by the vLLM wheel (cu12.x). GPU: 1x RTX PRO 6000 96GB (sm_120).

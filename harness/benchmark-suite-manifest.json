@@ -1,0 +1,1090 @@
+{
+ "name": "Decision Index frozen suite, edition 0.2.1",
+ "edition": "release-v2.1",
+ "base_edition": "release-v2",
+ "reference_model": "jev-1.13.0",
+ "seed": 20260919,
+ "created_utc": "2026-09-22T20:05:14.197492+00:00",
+ "selection": "Deterministic hash sample without replacement; ESCI proportional locale × relevance; request-budget datasets retain complete linked groups; no outcome-based selection.",
+ "files": {
+  "selected-rows.jsonl.gz": {
+   "sha256": "25aac5e890a54a3172c7a0c184b4cc8b9a43f10b6ee89bbad8da923be423c656",
+   "uncompressed_sha256": "b2b56d6fb636837ca469e689087bdbf373dda8de7638aa2da6793e6eda0792d5",
+   "rows": 124971,
+   "format": "release-v1 rows minus the ToolRet and BRIGHT rows outside their subsets (retrieval-subsets.json); byte-identical lines"
+  },
+  "added-rows.jsonl.gz": {
+   "uncompressed_sha256": "7429f3c9cdddb772c1cfc42bb2a45e8516b0032152b746e6929f1c8b52f4ce89",
+   "rows": 30419,
+   "format": "the seven benchmarks added in 0.2, in the order MMLU-Pro, BBH, When2Call, New Yorker, RAGTruth, HoVer, PhishNChips; lines byte-identical to the lab candidates-v3 and calibration-extension-v1 rows"
+  },
+  "excluded-questions.json": {
+   "sha256": "331df32d4b719c7db43214d0e5d85859d39c3b2eb7d0b3812214cce150155e81",
+   "rows": 442,
+   "purpose": "unchanged from 0.1; applied at scoring time for every engine"
+  },
+  "manifest.json": {
+   "purpose": "this file"
+  }
+ },
+ "scoring_subsets": {
+  "acos": {
+   "catalog_id": 38,
+   "dataset": "ACOS",
+   "seed": 20260960,
+   "method": "stratified by source domain (Laptop-ACOS / Restaurant-ACOS), proportional allocation, reviews (case groups) sampled without replacement per domain with random.Random(seed); every kept review keeps all of its rows",
+   "reviews_full": 1399,
+   "reviews_kept": 400,
+   "allocation": {
+    "Laptop-ACOS": [
+     816,
+     233
+    ],
+    "Restaurant-ACOS": [
+     583,
+     167
+    ]
+   },
+   "rows_full": 5479,
+   "rows_kept": 1565,
+   "run_ids_sha256": "2db2b00d6261702e2d33a297ee85665b56559dd7e8dfd0f83e6a4799f79f131f",
+   "basis": "ACOS is display-only (not in the index panel), costs 71% of per-question prompt tokens in the suite, and scores near floor for every model; user decision 2026-09-23 to subset it.",
+   "file": "decision_index/data/release-v2/acos-subset.json",
+   "sha256": "3b20eea1613ae3e1644339e6f89a4287b307a5750a86239bb8bca6f8238b8e45"
+  },
+  "retrieval": {
+   "seed": 20260922,
+   "method": "stratified by metadata.domain, proportional allocation with at least one query per domain, sampled without replacement per domain with random.Random(seed+catalog_id); every kept query keeps its full candidate list; excluded questions unchanged",
+   "file": "decision_index/data/release-v2/retrieval-subsets.json",
+   "sha256": "9228a9492ea40c499d8bb024417f566d0c0ced62c71ed4c1bf908e87ed50d8df",
+   "subsets": {
+    "ToolRet": {
+     "catalog_id": 2,
+     "queries_full": 7704,
+     "queries_kept": 1000,
+     "requests_kept": 1000,
+     "allocation": {
+      "apibank": [
+       100,
+       13
+      ],
+      "apigen": [
+       917,
+       119
+      ],
+      "appbench": [
+       32,
+       4
+      ],
+      "autotools-food": [
+       21,
+       3
+      ],
+      "autotools-music": [
+       12,
+       2
+      ],
+      "autotools-weather": [
+       3,
+       1
+      ],
+      "craft-math-algebra": [
+       280,
+       36
+      ],
+      "craft-tabmwp": [
+       174,
+       23
+      ],
+      "craft-vqa": [
+       200,
+       26
+      ],
+      "gorilla-huggingface": [
+       500,
+       65
+      ],
+      "gorilla-pytorch": [
+       43,
+       6
+      ],
+      "gorilla-tensor": [
+       55,
+       7
+      ],
+      "gpt4tools": [
+       32,
+       4
+      ],
+      "gta": [
+       14,
+       2
+      ],
+      "metatool": [
+       200,
+       26
+      ],
+      "mnms": [
+       27,
+       3
+      ],
+      "restgpt-spotify": [
+       40,
+       5
+      ],
+      "restgpt-tmdb": [
+       52,
+       7
+      ],
+      "reversechain": [
+       199,
+       26
+      ],
+      "rotbench": [
+       550,
+       71
+      ],
+      "t-eval-dialog": [
+       44,
+       6
+      ],
+      "t-eval-step": [
+       45,
+       6
+      ],
+      "taskbench-daily": [
+       39,
+       5
+      ],
+      "taskbench-huggingface": [
+       23,
+       3
+      ],
+      "taskbench-multimedia": [
+       40,
+       5
+      ],
+      "tool-be-honest": [
+       350,
+       45
+      ],
+      "toolace": [
+       933,
+       121
+      ],
+      "toolalpaca": [
+       94,
+       12
+      ],
+      "toolbench": [
+       1077,
+       140
+      ],
+      "toolbench-sam": [
+       197,
+       26
+      ],
+      "toolemu": [
+       36,
+       5
+      ],
+      "tooleyes": [
+       94,
+       12
+      ],
+      "toolink": [
+       497,
+       64
+      ],
+      "toollens": [
+       310,
+       40
+      ],
+      "ultratool": [
+       474,
+       61
+      ]
+     }
+    },
+    "BRIGHT": {
+     "catalog_id": 36,
+     "queries_full": 1297,
+     "queries_kept": 550,
+     "requests_kept": 550,
+     "allocation": {
+      "aops": [
+       111,
+       47
+      ],
+      "biology": [
+       103,
+       44
+      ],
+      "earth_science": [
+       114,
+       48
+      ],
+      "economics": [
+       103,
+       44
+      ],
+      "leetcode": [
+       140,
+       59
+      ],
+      "pony": [
+       112,
+       47
+      ],
+      "psychology": [
+       101,
+       43
+      ],
+      "robotics": [
+       98,
+       42
+      ],
+      "stackoverflow": [
+       45,
+       19
+      ],
+      "sustainable_living": [
+       108,
+       46
+      ],
+      "theoremqa_questions": [
+       192,
+       81
+      ],
+      "theoremqa_theorems": [
+       70,
+       30
+      ]
+     }
+    }
+   }
+  },
+  "toolret_answerable": {
+   "catalog_id": 2,
+   "dataset": "ToolRet",
+   "method": "a query is answerable when at least one of its scored candidates (scoring.scorable_ids) has a relevance judgment above 0; unanswerable queries score nDCG@10 = 0 for every ranking and leave the scored set. Rows already in the excluded-questions manifest stay listed so the exclusion count is unchanged.",
+   "queries_scored_v02": 1000,
+   "queries_kept": 685,
+   "rows_kept": 1013,
+   "basis": "user decision for Decision Index 0.2.1: score only queries with at least one relevant candidate among the 32",
+   "run_ids_sha256": "2dbf9b0d7df411fef59d0f23bf1931d824c91bb9abe1aaa00601f24aaf8ca656",
+   "file": "decision_index/data/release-v2.1/toolret-subset.json",
+   "sha256": "c301d5503955c14d99485e284d434bb1533f51229c34da1edc19dd8388116f01"
+  },
+  "bright_answerable": {
+   "catalog_id": 36,
+   "dataset": "BRIGHT",
+   "method": "a query is answerable when at least one of its scored candidates (scoring.scorable_ids) has a relevance judgment above 0; unanswerable queries score nDCG@10 = 0 for every ranking and leave the scored set. Rows already in the excluded-questions manifest stay listed so the exclusion count is unchanged.",
+   "queries_scored_v02": 550,
+   "queries_kept": 220,
+   "rows_kept": 307,
+   "basis": "user decision for Decision Index 0.2.1: score only queries with at least one relevant candidate among the 32",
+   "run_ids_sha256": "82bd3c93209100d60b1d10535801bad52472c8a7ceabc3f074b1114d7b8f9f1c",
+   "file": "decision_index/data/release-v2.1/bright-subset.json",
+   "sha256": "ed3a05220e09be2b96c02514345c61894f7a0ffc73e6884a100392d23692cfb8"
+  },
+  "home_appliances": {
+   "catalog_id": 9,
+   "dataset": "Home appliances",
+   "method": "test rows compared by their full state (JSON, sorted keys); of each set of identical test rows the one with the lowest row id is kept, and every test row whose state is identical to a row of the published dev split (artifacts/benchmark-suite/home/dev.jsonl) is dropped",
+   "rows_full": 160,
+   "duplicate_rows_dropped": 24,
+   "dev_identical_rows_dropped": 48,
+   "dropped_both_ways": 0,
+   "rows_kept": 88,
+   "basis": "user decision for Decision Index 0.2.1: duplicate test pairs and test rows identical to published dev rows leave the scored set",
+   "run_ids_sha256": "f76d0ef2493916ba799a4e78e42d734100e152f2b73d6978ab2370a3866d6e87",
+   "file": "decision_index/data/release-v2.1/home-appliances-subset.json",
+   "sha256": "d2d0df922a47a9757bef17f382a4ed4c5c3bfff953f941c29404e93a490bce2c"
+  }
+ },
+ "requests_in_rows_file": 124971,
+ "requests": 120340,
+ "scoreable_requests": 119898,
+ "added_requests": 30419,
+ "static_benchmarks": 37,
+ "added_benchmarks": 7,
+ "notes": [
+  "Original 500-case pilot remains frozen separately.",
+  "Request caps count planned logical evaluations. Transport retries or context splits are logged separately and may add HTTP attempts.",
+  "Cached successful pilot responses reused only for identical full request SHA256; original latency and provenance retained.",
+  "Game protocols and budgets are pinned separately.",
+  "Release v2 keeps every v1 row except a stratified subset cut of ToolRet (1,000 of 7,961 queries incl. excluded ones) and BRIGHT (550 of 1,384 queries); all other benchmarks, question order, options and scoring are unchanged. Kept ToolRet and BRIGHT queries retain their complete candidate lists.",
+  "ToolRet and BRIGHT rows of questions listed in excluded-questions.json were carried over unchanged (they are never scored); the scored subsets are 1,000 and 550 query groups, see scored_cases.",
+  "Release v2.1 is a rescore of release v2: the rows files are the same, and ToolRet and BRIGHT are scored on their answerable queries only and Home appliances without its duplicate and dev-identical rows (scoring_subsets), applied at read time like the ACOS subset."
+ ],
+ "benchmarks": [
+  {
+   "catalog_id": 1,
+   "dataset": "BFCL",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 1694,
+   "selected_cases": 1694,
+   "requests": 1694,
+   "fields": 4768,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 2,
+   "dataset": "ToolRet",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 7961,
+   "selected_cases": 1257,
+   "requests": 1328,
+   "fields": 40127,
+   "request_cap": null,
+   "case_cap": 1000,
+   "full_edition_selected_cases": 7961,
+   "full_edition_requests": 8032,
+   "full_edition_fields": 254650,
+   "subset_allocation": {
+    "apibank": [
+     100,
+     13
+    ],
+    "apigen": [
+     917,
+     119
+    ],
+    "appbench": [
+     32,
+     4
+    ],
+    "autotools-food": [
+     21,
+     3
+    ],
+    "autotools-music": [
+     12,
+     2
+    ],
+    "autotools-weather": [
+     3,
+     1
+    ],
+    "craft-math-algebra": [
+     280,
+     36
+    ],
+    "craft-tabmwp": [
+     174,
+     23
+    ],
+    "craft-vqa": [
+     200,
+     26
+    ],
+    "gorilla-huggingface": [
+     500,
+     65
+    ],
+    "gorilla-pytorch": [
+     43,
+     6
+    ],
+    "gorilla-tensor": [
+     55,
+     7
+    ],
+    "gpt4tools": [
+     32,
+     4
+    ],
+    "gta": [
+     14,
+     2
+    ],
+    "metatool": [
+     200,
+     26
+    ],
+    "mnms": [
+     27,
+     3
+    ],
+    "restgpt-spotify": [
+     40,
+     5
+    ],
+    "restgpt-tmdb": [
+     52,
+     7
+    ],
+    "reversechain": [
+     199,
+     26
+    ],
+    "rotbench": [
+     550,
+     71
+    ],
+    "t-eval-dialog": [
+     44,
+     6
+    ],
+    "t-eval-step": [
+     45,
+     6
+    ],
+    "taskbench-daily": [
+     39,
+     5
+    ],
+    "taskbench-huggingface": [
+     23,
+     3
+    ],
+    "taskbench-multimedia": [
+     40,
+     5
+    ],
+    "tool-be-honest": [
+     350,
+     45
+    ],
+    "toolace": [
+     933,
+     121
+    ],
+    "toolalpaca": [
+     94,
+     12
+    ],
+    "toolbench": [
+     1077,
+     140
+    ],
+    "toolbench-sam": [
+     197,
+     26
+    ],
+    "toolemu": [
+     36,
+     5
+    ],
+    "tooleyes": [
+     94,
+     12
+    ],
+    "toolink": [
+     497,
+     64
+    ],
+    "toollens": [
+     310,
+     40
+    ],
+    "ultratool": [
+     474,
+     61
+    ]
+   },
+   "scored_cases": 1000,
+   "selected_cases_note": "selected_cases and selected_group_ids count every query group present in the rows file, including groups that excluded-questions.json removes from scoring and that were kept unchanged from v1; scored_cases is the sampled subset that is scored."
+  },
+  {
+   "catalog_id": 3,
+   "dataset": "API-Bank",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 508,
+   "selected_cases": 508,
+   "requests": 508,
+   "fields": 508,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 4,
+   "dataset": "BANKING77",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 3080,
+   "selected_cases": 3080,
+   "requests": 3080,
+   "fields": 3080,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 5,
+   "dataset": "CLINC150+OOS",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 5500,
+   "selected_cases": 5500,
+   "requests": 5500,
+   "fields": 5500,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 6,
+   "dataset": "RouterBench",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 29163,
+   "selected_cases": 5001,
+   "requests": 10000,
+   "fields": 20000,
+   "request_cap": 10000,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 9,
+   "dataset": "Home appliance simulator",
+   "benchmark_origin": "Purpose-built benchmarks",
+   "available_cases": 160,
+   "selected_cases": 160,
+   "requests": 160,
+   "fields": 2895,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 10,
+   "dataset": "SGD/SGD-X",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 46116,
+   "selected_cases": 2500,
+   "requests": 2500,
+   "fields": 2500,
+   "request_cap": null,
+   "case_cap": 2500
+  },
+  {
+   "catalog_id": 11,
+   "dataset": "ContractNLI",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 123,
+   "selected_cases": 123,
+   "requests": 123,
+   "fields": 2091,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 12,
+   "dataset": "ANLI",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 3200,
+   "selected_cases": 3200,
+   "requests": 3200,
+   "fields": 3200,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 20,
+   "dataset": "BPoMP",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 22419,
+   "selected_cases": 811,
+   "requests": 5000,
+   "fields": 5000,
+   "request_cap": 5000,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 21,
+   "dataset": "Humicroedit",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 2628,
+   "selected_cases": 2628,
+   "requests": 2628,
+   "fields": 2628,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 22,
+   "dataset": "POP909-CL",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 75582,
+   "selected_cases": 2000,
+   "requests": 2000,
+   "fields": 2000,
+   "request_cap": null,
+   "case_cap": 2000
+  },
+  {
+   "catalog_id": 23,
+   "dataset": "cfcolor",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 11821,
+   "selected_cases": 5000,
+   "requests": 5000,
+   "fields": 5000,
+   "request_cap": null,
+   "case_cap": 5000
+  },
+  {
+   "catalog_id": 24,
+   "dataset": "MMLU",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 14042,
+   "selected_cases": 14042,
+   "requests": 14042,
+   "fields": 14042,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 25,
+   "dataset": "GPQA Diamond",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 198,
+   "selected_cases": 198,
+   "requests": 198,
+   "fields": 198,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 26,
+   "dataset": "ARC-Easy",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 2376,
+   "selected_cases": 2376,
+   "requests": 2376,
+   "fields": 2376,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 27,
+   "dataset": "ARC-Challenge",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 1172,
+   "selected_cases": 1172,
+   "requests": 1172,
+   "fields": 1172,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 28,
+   "dataset": "WinoGrande",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 1267,
+   "selected_cases": 1267,
+   "requests": 1267,
+   "fields": 1267,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 29,
+   "dataset": "HellaSwag",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 10042,
+   "selected_cases": 10042,
+   "requests": 10042,
+   "fields": 10042,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 30,
+   "dataset": "GSM8K",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 1319,
+   "selected_cases": 1319,
+   "requests": 2638,
+   "fields": 2638,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 31,
+   "dataset": "ChessBench",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 61833,
+   "selected_cases": 5000,
+   "requests": 5000,
+   "fields": 5000,
+   "request_cap": null,
+   "case_cap": 5000
+  },
+  {
+   "catalog_id": 32,
+   "dataset": "MuSR",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 756,
+   "selected_cases": 756,
+   "requests": 756,
+   "fields": 756,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 33,
+   "dataset": "SATA-Bench",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 1650,
+   "selected_cases": 1650,
+   "requests": 1650,
+   "fields": 15517,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 34,
+   "dataset": "SimpleBench",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 10,
+   "selected_cases": 10,
+   "requests": 10,
+   "fields": 10,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 36,
+   "dataset": "BRIGHT",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 1384,
+   "selected_cases": 637,
+   "requests": 637,
+   "fields": 20383,
+   "request_cap": null,
+   "case_cap": 550,
+   "full_edition_selected_cases": 1384,
+   "full_edition_requests": 1384,
+   "full_edition_fields": 44286,
+   "subset_allocation": {
+    "aops": [
+     111,
+     47
+    ],
+    "biology": [
+     103,
+     44
+    ],
+    "earth_science": [
+     114,
+     48
+    ],
+    "economics": [
+     103,
+     44
+    ],
+    "leetcode": [
+     140,
+     59
+    ],
+    "pony": [
+     112,
+     47
+    ],
+    "psychology": [
+     101,
+     43
+    ],
+    "robotics": [
+     98,
+     42
+    ],
+    "stackoverflow": [
+     45,
+     19
+    ],
+    "sustainable_living": [
+     108,
+     46
+    ],
+    "theoremqa_questions": [
+     192,
+     81
+    ],
+    "theoremqa_theorems": [
+     70,
+     30
+    ]
+   },
+   "scored_cases": 550,
+   "selected_cases_note": "selected_cases and selected_group_ids count every query group present in the rows file, including groups that excluded-questions.json removes from scoring and that were kept unchanged from v1; scored_cases is the sampled subset that is scored."
+  },
+  {
+   "catalog_id": 37,
+   "dataset": "Amazon ESCI",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 638016,
+   "selected_cases": 5000,
+   "requests": 5000,
+   "fields": 5000,
+   "request_cap": null,
+   "case_cap": 5000
+  },
+  {
+   "catalog_id": 38,
+   "dataset": "ACOS",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 1399,
+   "selected_cases": 1399,
+   "requests": 5479,
+   "fields": 318945,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 39,
+   "dataset": "FinEntity",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 979,
+   "selected_cases": 979,
+   "requests": 979,
+   "fields": 2129,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 40,
+   "dataset": "iSarcasmEval",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 4600,
+   "selected_cases": 4600,
+   "requests": 4600,
+   "fields": 11600,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 41,
+   "dataset": "VAST",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 3006,
+   "selected_cases": 3006,
+   "requests": 3006,
+   "fields": 3006,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 42,
+   "dataset": "NLI4CT",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 5500,
+   "selected_cases": 5500,
+   "requests": 5500,
+   "fields": 5500,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 43,
+   "dataset": "CRUXEval",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 570,
+   "selected_cases": 570,
+   "requests": 570,
+   "fields": 570,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 44,
+   "dataset": "CLadder",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 10112,
+   "selected_cases": 5000,
+   "requests": 5000,
+   "fields": 5000,
+   "request_cap": null,
+   "case_cap": 5000
+  },
+  {
+   "catalog_id": 45,
+   "dataset": "HLE",
+   "benchmark_origin": "Original-task benchmarks",
+   "available_cases": 513,
+   "selected_cases": 513,
+   "requests": 513,
+   "fields": 513,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 48,
+   "dataset": "ForecastBench",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 10139,
+   "selected_cases": 10139,
+   "requests": 10139,
+   "fields": 10139,
+   "request_cap": null,
+   "case_cap": null
+  },
+  {
+   "catalog_id": 50,
+   "dataset": "Habermas Machine",
+   "benchmark_origin": "Jev-adapted benchmarks",
+   "available_cases": 1676,
+   "selected_cases": 1676,
+   "requests": 1676,
+   "fields": 1676,
+   "request_cap": null,
+   "case_cap": null
+  }
+ ],
+ "added": [
+  {
+   "catalog_id": 57,
+   "dataset": "MMLU-Pro",
+   "area": "knowledge",
+   "requests": 12032,
+   "fields": 12032,
+   "source": {
+    "huggingface": {
+     "repo": "TIGER-Lab/MMLU-Pro",
+     "revision": "b189ec765aa7ed75c8acfea42df31fdae71f97be"
+    }
+   },
+   "wording": {
+    "state": "question text",
+    "instructions": "Which option is the correct answer?",
+    "criteria": "letters A.. mapped to the published options in order"
+   },
+   "licence": "MIT",
+   "run_id_prefix": "candidates-v3:"
+  },
+  {
+   "catalog_id": 58,
+   "dataset": "BBH fixed-option tasks",
+   "area": "knowledge",
+   "requests": 5507,
+   "fields": 5507,
+   "source": {
+    "git": {
+     "url": "https://github.com/suzgunmirac/BIG-Bench-Hard",
+     "commit": "9ee07bd481feebf959a6b59d61ea57bdcf30964d"
+    }
+   },
+   "wording": {
+    "state": "task input verbatim, including its own Options block",
+    "instructions": "Which option is the correct answer?",
+    "criteria": "parsed (A).. options in order, or the task answer set (Yes/No, valid/invalid, True/False, yes/no)"
+   },
+   "licence": "MIT (repo LICENSE); carries the BIG-bench canary, never place in training corpora",
+   "run_id_prefix": "candidates-v3:"
+  },
+  {
+   "catalog_id": 62,
+   "dataset": "When2Call MCQ",
+   "area": "tools",
+   "requests": 3652,
+   "fields": 3652,
+   "source": {
+    "huggingface": {
+     "repo": "nvidia/When2Call",
+     "revision": "0582f7749df63a96fdc3070932e83e72396ace53"
+    }
+   },
+   "wording": {
+    "state": "{tools: parsed tool schemas, question: user question}",
+    "instructions": "Which response should the assistant give to the user's question, given the available tools?",
+    "criteria": "A..D mapped to the answers in published order: direct, tool_call, request_for_info, cannot_answer"
+   },
+   "licence": "CC BY-4.0",
+   "run_id_prefix": "candidates-v3:"
+  },
+  {
+   "catalog_id": 64,
+   "dataset": "New Yorker caption matching",
+   "area": "arts",
+   "requests": 528,
+   "fields": 528,
+   "source": {
+    "huggingface": {
+     "repo": "jmhessel/newyorker_caption_contest",
+     "revision": "d81cbab7d0392708d5371d3a4960e69261824db4"
+    }
+   },
+   "wording": {
+    "state": "{scene, description, uncanny_description, entities} from the dataset text annotations",
+    "instructions": "Which caption was written for this cartoon?",
+    "criteria": "A..E mapped to caption_choices in order"
+   },
+   "licence": "CC BY 4.0 annotations; cartoons not used",
+   "run_id_prefix": "candidates-v3:"
+  },
+  {
+   "catalog_id": 59,
+   "dataset": "RAGTruth response-level hallucination",
+   "area": "language",
+   "requests": 2700,
+   "fields": 2700,
+   "source": {
+    "git": {
+     "url": "https://github.com/ParticleMedia/RAGTruth",
+     "commit": "c103204b9ce28d6bbad859304bf30de72b8ed8fe"
+    }
+   },
+   "wording": {
+    "state": "{prompt: original generation prompt with its context, response: evaluated response}",
+    "instructions": "The response contains content that is not supported by the context in the prompt.",
+    "criteria": {
+     "true": "The response contains content that is not supported by the context in the prompt.",
+     "false": "All content of the response is supported by the context in the prompt."
+    }
+   },
+   "licence": "MIT annotations and code; contexts come from CNN/Daily Mail, MS MARCO (non-commercial terms) and the Yelp Open Dataset (no redistribution), so rows are rebuilt locally and never republished",
+   "run_id_prefix": "candidates-v3:"
+  },
+  {
+   "catalog_id": 61,
+   "dataset": "HoVer claim verification",
+   "area": "retrieval",
+   "requests": 4000,
+   "fields": 4000,
+   "source": {
+    "git": {
+     "url": "https://github.com/hover-nlp/hover",
+     "commit": "39b84697f196308f398a251a7aea9b82ae0f0562"
+    },
+    "hover_wiki_db": {
+     "url": "https://nlp.cs.unc.edu/data/hover/wiki_wo_links.db",
+     "sha256": "c37ee397916ec0bffacfe8902db454a5cda88a7a188409217b2e15231fe5ee2f"
+    }
+   },
+   "wording": {
+    "state": "{claim, evidence: [{title, text}] full HoVer-wiki introduction of each document named in supporting_facts}",
+    "instructions": "Is the claim supported by the evidence?",
+    "criteria": {
+     "SUPPORTED": "The evidence supports the claim.",
+     "NOT_SUPPORTED": "The evidence does not support the claim."
+    }
+   },
+   "licence": "CC BY-SA 4.0 data, MIT code; Wikipedia text CC BY-SA",
+   "run_id_prefix": "candidates-v3:"
+  },
+  {
+   "catalog_id": 56,
+   "dataset": "PhishNChips phishing decisions",
+   "area": "retrieval",
+   "requests": 2000,
+   "fields": 18000,
+   "scored_fields": "verdict only (2,000)",
+   "source": {
+    "huggingface": {
+     "repo": "AreLit/PhishNChips",
+     "revision": "89afcc39610084298c4679159cb2e27d9ffffa46",
+     "file": "core_emails.csv",
+     "sha256": "cebb407ff8630491a97400e37464b8db8dfc4299164fca51fcb4ac7eec8204ef"
+    },
+    "questions": {
+     "git": {
+      "url": "https://github.com/anisselbd/jev-phishing-bench",
+      "commit": "1d56e8c64d029a9554a0874e2ef2901ed196e230",
+      "file": "run_jev.py (QUESTIONS)"
+     }
+    }
+   },
+   "wording": "original nine-question payload; records shuffled with random.Random(20260916); five sig_* signal questions carry no gold and are not scored",
+   "licence": "per the dataset SOURCE_LICENSES.md (PhishNChips v5.2: project content MIT; URL sources cleared for academic use with attribution)",
+   "run_id_prefix": "calibration-v1:"
+  }
+ ]
+}
