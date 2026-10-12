@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 540" width="1240" height="540" role="img" aria-label="Jex engine pipeline: state and typed questions feed a deterministic engine that makes a single greedy step, reads out 255 candidate labels, applies probability-preserving post-processing levers, and emits answers with probabilities.">
+  <defs>
+    <linearGradient id="pp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#07090C"/>
+    </linearGradient>
+    <pattern id="pp-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+    <marker id="pp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5B6472"/>
+    </marker>
+    <style>
+      .d{font-family:'Sofia Pro','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+      .m{font-family:'SFMono-Regular','JetBrains Mono','Cascadia Mono',Menlo,Consolas,monospace;}
+    </style>
+  </defs>
+
+  <rect width="1240" height="540" rx="20" fill="url(#pp-bg)"/>
+  <rect width="1240" height="540" rx="20" fill="url(#pp-grid)"/>
+  <rect x="0.5" y="0.5" width="1239" height="539" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+
+  <text x="40" y="66" class="d" font-size="25" font-weight="800" fill="#F4F6FA">The engine, end to end</text>
+  <text x="40" y="94" class="d" font-size="14" fill="#8892A0">One forward pass, one token, no free-form text — and nothing in the model is trained.</text>
+
+  <!-- connector lines -->
+  <g stroke="#5B6472" stroke-width="1.5" marker-end="url(#pp-arrow)">
+    <line x1="208" y1="235" x2="234" y2="235"/>
+    <line x1="406" y1="235" x2="432" y2="235"/>
+    <line x1="604" y1="235" x2="630" y2="235"/>
+    <line x1="802" y1="235" x2="828" y2="235"/>
+    <line x1="1000" y1="235" x2="1026" y2="235"/>
+  </g>
+
+  <!-- stage 1 -->
+  <g transform="translate(40,140)">
+    <rect x="0" y="0" width="168" height="190" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="167" height="189" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="168" height="4" rx="2" fill="#FF4200"/>
+    <text x="16" y="34" class="m" font-size="12" letter-spacing="1.5" fill="#FF4200">01</text>
+    <text x="16" y="66" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">State +</text>
+    <text x="16" y="86" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">typed questions</text>
+    <text x="16" y="116" class="d" font-size="11.5" fill="#8892A0">the only input</text>
+    <text x="16" y="133" class="d" font-size="11.5" fill="#8892A0">(state + questions)</text>
+    <g transform="translate(16,156)">
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#161C24" stroke="#2A323D"/>
+      <text x="35" y="15" text-anchor="middle" class="m" font-size="10.5" fill="#B7C0CD">state</text>
+      <rect x="80" y="0" width="72" height="22" rx="6" fill="#161C24" stroke="#2A323D"/>
+      <text x="116" y="15" text-anchor="middle" class="m" font-size="10.5" fill="#B7C0CD">questions</text>
+    </g>
+  </g>
+
+  <!-- stage 2 -->
+  <g transform="translate(238,140)">
+    <rect x="0" y="0" width="168" height="190" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="167" height="189" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="168" height="4" rx="2" fill="#FF4200"/>
+    <text x="16" y="34" class="m" font-size="12" letter-spacing="1.5" fill="#FF4200">02</text>
+    <text x="16" y="66" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">Deterministic</text>
+    <text x="16" y="86" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">engine</text>
+    <text x="16" y="116" class="d" font-size="11.5" fill="#8892A0">no run state, no</text>
+    <text x="16" y="133" class="d" font-size="11.5" fill="#8892A0">benchmark memory</text>
+    <g transform="translate(58,156)">
+      <circle cx="26" cy="26" r="24" fill="none" stroke="#34C9A2" stroke-width="2.5"/>
+      <path d="M26 12 v28 M12 26 h28" stroke="#34C9A2" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="7" fill="#34C9A2"/>
+    </g>
+  </g>
+
+  <!-- stage 3 -->
+  <g transform="translate(436,140)">
+    <rect x="0" y="0" width="168" height="190" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="167" height="189" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="168" height="4" rx="2" fill="#FF4200"/>
+    <text x="16" y="34" class="m" font-size="12" letter-spacing="1.5" fill="#FF4200">03</text>
+    <text x="16" y="66" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">Single</text>
+    <text x="16" y="86" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">greedy step</text>
+    <text x="16" y="116" class="d" font-size="11.5" fill="#8892A0">one token,</text>
+    <text x="16" y="133" class="d" font-size="11.5" fill="#8892A0">never sampled</text>
+    <g transform="translate(40,166)">
+      <circle cx="18" cy="16" r="9" fill="#161C24" stroke="#4A5361" stroke-width="2"/>
+      <line x1="36" y1="16" x2="62" y2="16" stroke="#4A5361" stroke-width="2"/>
+      <path d="M56 10 l8 6 l-8 6" fill="none" stroke="#FF4200" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="86" cy="16" r="8" fill="#FF4200"/>
+    </g>
+  </g>
+
+  <!-- stage 4 -->
+  <g transform="translate(634,140)">
+    <rect x="0" y="0" width="168" height="190" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="167" height="189" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="168" height="4" rx="2" fill="#FF4200"/>
+    <text x="16" y="34" class="m" font-size="12" letter-spacing="1.5" fill="#FF4200">04</text>
+    <text x="16" y="66" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">255-label</text>
+    <text x="16" y="86" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">readout</text>
+    <text x="16" y="116" class="d" font-size="11.5" fill="#8892A0">softmax over the</text>
+    <text x="16" y="133" class="d" font-size="11.5" fill="#8892A0">allowed labels</text>
+    <g transform="translate(28,152)">
+      <g fill="#39414D">
+        <rect x="0" y="0" width="17" height="17" rx="3"/><rect x="21" y="0" width="17" height="17" rx="3"/><rect x="42" y="0" width="17" height="17" rx="3"/><rect x="63" y="0" width="17" height="17" rx="3"/><rect x="84" y="0" width="17" height="17" rx="3"/>
+        <rect x="0" y="21" width="17" height="17" rx="3"/><rect x="63" y="21" width="17" height="17" rx="3"/><rect x="84" y="21" width="17" height="17" rx="3"/>
+        <rect x="0" y="42" width="17" height="17" rx="3"/><rect x="21" y="42" width="17" height="17" rx="3"/><rect x="84" y="42" width="17" height="17" rx="3"/>
+      </g>
+      <rect x="21" y="21" width="17" height="17" rx="3" fill="#FF4200"/>
+      <rect x="42" y="21" width="17" height="17" rx="3" fill="#FF4200" fill-opacity="0.45"/>
+      <rect x="42" y="42" width="17" height="17" rx="3" fill="#FF4200" fill-opacity="0.18"/>
+      <rect x="63" y="42" width="17" height="17" rx="3" fill="#FF4200" fill-opacity="0.30"/>
+    </g>
+  </g>
+
+  <!-- stage 5 -->
+  <g transform="translate(832,140)">
+    <rect x="0" y="0" width="168" height="190" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="167" height="189" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="168" height="4" rx="2" fill="#E49B2D"/>
+    <text x="16" y="34" class="m" font-size="12" letter-spacing="1.5" fill="#E49B2D">05</text>
+    <text x="16" y="66" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">Post-processing</text>
+    <text x="16" y="86" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">levers</text>
+    <text x="16" y="116" class="d" font-size="11.5" fill="#8892A0">rewrite the choice;</text>
+    <text x="16" y="133" class="d" font-size="11.5" fill="#8892A0">never touch p</text>
+    <g transform="translate(24,158)">
+      <g>
+        <rect x="0" y="0" width="120" height="6" rx="3" fill="#1A2029"/><rect x="0" y="0" width="86" height="6" rx="3" fill="#E49B2D"/><circle cx="86" cy="3" r="7" fill="#0E1218" stroke="#E49B2D" stroke-width="2.5"/>
+        <rect x="0" y="20" width="120" height="6" rx="3" fill="#1A2029"/><rect x="0" y="20" width="46" height="6" rx="3" fill="#E49B2D"/><circle cx="46" cy="23" r="7" fill="#0E1218" stroke="#E49B2D" stroke-width="2.5"/>
+        <rect x="0" y="40" width="120" height="6" rx="3" fill="#1A2029"/><rect x="0" y="40" width="102" height="6" rx="3" fill="#E49B2D"/><circle cx="102" cy="43" r="7" fill="#0E1218" stroke="#E49B2D" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- stage 6 -->
+  <g transform="translate(1030,140)">
+    <rect x="0" y="0" width="168" height="190" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="167" height="189" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="168" height="4" rx="2" fill="#34C9A2"/>
+    <text x="16" y="34" class="m" font-size="12" letter-spacing="1.5" fill="#34C9A2">06</text>
+    <text x="16" y="66" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">Answers +</text>
+    <text x="16" y="86" class="d" font-size="15.5" font-weight="700" fill="#EDF0F5">probabilities</text>
+    <text x="16" y="116" class="d" font-size="11.5" fill="#8892A0">one answer, a</text>
+    <text x="16" y="133" class="d" font-size="11.5" fill="#8892A0">p for every option</text>
+    <g transform="translate(30,158)">
+      <rect x="0" y="18" width="16" height="24" rx="3" fill="#34C9A2" fill-opacity="0.35"/>
+      <rect x="26" y="6" width="16" height="36" rx="3" fill="#34C9A2" fill-opacity="0.6"/>
+      <rect x="52" y="0" width="16" height="42" rx="3" fill="#34C9A2"/>
+      <rect x="78" y="24" width="16" height="18" rx="3" fill="#34C9A2" fill-opacity="0.2"/>
+    </g>
+  </g>
+
+  <!-- guarantee chips -->
+  <g>
+    <g transform="translate(40,356)">
+      <rect x="0" y="0" width="275" height="52" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="51" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="26" cy="26" r="4" fill="#34C9A2"/>
+      <text x="42" y="24" class="d" font-size="13.5" font-weight="700" fill="#EDF0F5">Frozen weights</text>
+      <text x="42" y="40" class="d" font-size="11" fill="#8892A0">no head · no LoRA · no fine-tune</text>
+    </g>
+    <g transform="translate(335,356)">
+      <rect x="0" y="0" width="275" height="52" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="51" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="26" cy="26" r="4" fill="#34C9A2"/>
+      <text x="42" y="24" class="d" font-size="13.5" font-weight="700" fill="#EDF0F5">Batch-invariant · serial</text>
+      <text x="42" y="40" class="d" font-size="11" fill="#8892A0">VLLM_BATCH_INVARIANT=1, one at a time</text>
+    </g>
+    <g transform="translate(630,356)">
+      <rect x="0" y="0" width="275" height="52" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="51" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="26" cy="26" r="4" fill="#34C9A2"/>
+      <text x="42" y="24" class="d" font-size="13.5" font-weight="700" fill="#EDF0F5">Greedy · no thinking</text>
+      <text x="42" y="40" class="d" font-size="11" fill="#8892A0">no decode loop, no reasoning tokens</text>
+    </g>
+    <g transform="translate(925,356)">
+      <rect x="0" y="0" width="275" height="52" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="51" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="26" cy="26" r="4" fill="#E49B2D"/>
+      <text x="42" y="24" class="d" font-size="13.5" font-weight="700" fill="#EDF0F5">Probabilities preserved</text>
+      <text x="42" y="40" class="d" font-size="11" fill="#8892A0">levers rewrite the choice only</text>
+    </g>
+  </g>
+
+  <text x="40" y="456" class="m" font-size="12" fill="#6C7686">model google/gemma-4-31B-it @ 842da379… · bf16 · vLLM 0.30.0 · kit 62d2f51 (edition 0.3)</text>
+  <text x="40" y="482" class="d" font-size="12.5" fill="#8892A0">The readout is a single greedy step over a 255-entry single-token label table — the engine never emits free text, so it cannot answer with something that was not on the list.</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" width="1100" height="500" role="img" aria-label="Score ladder: base 59.48, then +fold 59.96, +c05best 60.09, +R42 60.21, +R20 60.29 public index. Leave-one-out checks, and each lever is one-flag reversible.">
+  <defs>
+    <linearGradient id="ld-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#07090C"/>
+    </linearGradient>
+    <style>
+      .d{font-family:'Sofia Pro','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+      .m{font-family:'SFMono-Regular','JetBrains Mono','Cascadia Mono',Menlo,Consolas,monospace;}
+    </style>
+  </defs>
+
+  <rect width="1100" height="500" rx="20" fill="url(#ld-bg)"/>
+  <rect x="0.5" y="0.5" width="1099" height="499" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+
+  <text x="40" y="50" class="d" font-size="23" font-weight="800" fill="#F4F6FA">The ladder</text>
+  <text x="40" y="76" class="d" font-size="13.5" fill="#8892A0">Cumulative public index on the same 140,178 requests — every step receipted. The four levers add +0.81 in total.</text>
+
+  <!-- gridlines -->
+  <g stroke="#ffffff" stroke-opacity="0.06">
+    <line x1="394.5" y1="112" x2="394.5" y2="396"/>
+    <line x1="529.1" y1="112" x2="529.1" y2="396"/>
+    <line x1="663.6" y1="112" x2="663.6" y2="396"/>
+    <line x1="798.2" y1="112" x2="798.2" y2="396"/>
+    <line x1="932.7" y1="112" x2="932.7" y2="396"/>
+  </g>
+  <g class="m" font-size="10.5" fill="#5B6472" text-anchor="middle">
+    <text x="394.5" y="412">59.5</text>
+    <text x="529.1" y="412">59.7</text>
+    <text x="663.6" y="412">59.9</text>
+    <text x="798.2" y="412">60.1</text>
+    <text x="932.7" y="412">60.3</text>
+  </g>
+
+  <!-- baseline -->
+  <line x1="260" y1="112" x2="260" y2="396" stroke="#2A323D" stroke-width="1.5"/>
+  <!-- base value marker -->
+  <line x1="381" y1="112" x2="381" y2="396" stroke="#8892A0" stroke-dasharray="4 5" stroke-width="1"/>
+
+  <!-- bars -->
+  <g class="m">
+    <text x="246" y="148" text-anchor="end" class="d" font-size="13" fill="#8892A0">base (frozen capture)</text>
+    <rect x="260" y="128" width="121" height="30" rx="6" fill="#3A424E"/>
+    <text x="393" y="149" font-size="17" font-weight="700" fill="#C7CFDA">59.48</text>
+    <text x="470" y="149" class="d" font-size="11.5" fill="#5B6472">no levers</text>
+
+    <text x="246" y="202" text-anchor="end" class="d" font-size="13" fill="#C7CFDA">+ fold (cat62)</text>
+    <rect x="260" y="182" width="444" height="30" rx="6" fill="#FF4200" fill-opacity="0.45"/>
+    <text x="716" y="203" font-size="17" font-weight="700" fill="#EDF0F5">59.96</text>
+    <text x="793" y="203" class="d" font-size="11.5" fill="#FF7A45">+0.48</text>
+
+    <text x="246" y="256" text-anchor="end" class="d" font-size="13" fill="#C7CFDA">+ c05best (cat59)</text>
+    <rect x="260" y="236" width="531" height="30" rx="6" fill="#FF4200" fill-opacity="0.62"/>
+    <text x="803" y="257" font-size="17" font-weight="700" fill="#EDF0F5">60.09</text>
+    <text x="880" y="257" class="d" font-size="11.5" fill="#FF7A45">+0.13</text>
+
+    <text x="246" y="310" text-anchor="end" class="d" font-size="13" fill="#C7CFDA">+ R42 (cat42)</text>
+    <rect x="260" y="290" width="612" height="30" rx="6" fill="#FF4200" fill-opacity="0.8"/>
+    <text x="884" y="311" font-size="17" font-weight="700" fill="#EDF0F5">60.21</text>
+    <text x="961" y="311" class="d" font-size="11.5" fill="#FF7A45">+0.12</text>
+
+    <text x="246" y="364" text-anchor="end" class="d" font-size="13" font-weight="700" fill="#FF7A45">+ R20 (cat20) — adopted</text>
+    <rect x="260" y="344" width="666" height="30" rx="6" fill="#FF4200"/>
+    <text x="938" y="365" font-size="17" font-weight="700" fill="#FF4200">60.29</text>
+    <text x="1015" y="365" class="d" font-size="11.5" fill="#FF7A45">+0.08</text>
+  </g>
+
+  <!-- footer: leave-one-out -->
+  <text x="40" y="446" class="m" font-size="11" letter-spacing="1.6" fill="#8892A0">LEAVE-ONE-OUT (each lever dropped alone)</text>
+  <g>
+    <g transform="translate(40,458)">
+      <rect x="0" y="0" width="150" height="30" rx="8" fill="#0C1015" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="12" y="20" class="m" font-size="11.5" fill="#B7C0CD">no-R20 → 60.21</text>
+    </g>
+    <g transform="translate(202,458)">
+      <rect x="0" y="0" width="166" height="30" rx="8" fill="#0C1015" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="12" y="20" class="m" font-size="11.5" fill="#B7C0CD">no-c05best → 60.16</text>
+    </g>
+    <g transform="translate(380,458)">
+      <rect x="0" y="0" width="150" height="30" rx="8" fill="#0C1015" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="12" y="20" class="m" font-size="11.5" fill="#B7C0CD">no-R42 → 60.17</text>
+    </g>
+    <text x="556" y="478" class="d" font-size="11.5" fill="#8892A0">Any lever can be dropped with one flag; probabilities are never modified.</text>
+  </g>
+</svg>

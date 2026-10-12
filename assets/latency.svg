@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-label="Latency on one RTX PRO 6000, serial: median 116.4 ms, mean 369.6 ms, p80 319.9 ms — all well under the board's 1000 ms admission gate. n = 750.">
+  <defs>
+    <linearGradient id="lt-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#07090C"/>
+    </linearGradient>
+    <style>
+      .d{font-family:'Sofia Pro','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+      .m{font-family:'SFMono-Regular','JetBrains Mono','Cascadia Mono',Menlo,Consolas,monospace;}
+    </style>
+  </defs>
+
+  <rect width="1000" height="420" rx="20" fill="url(#lt-bg)"/>
+  <rect x="0.5" y="0.5" width="999" height="419" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+
+  <text x="40" y="50" class="d" font-size="23" font-weight="800" fill="#F4F6FA">Fast enough to be admitted</text>
+  <text x="40" y="76" class="d" font-size="13.5" fill="#8892A0">One RTX PRO 6000, single process, one request at a time — the board's own protocol. n = 750.</text>
+
+  <!-- axis -->
+  <g class="m" font-size="10.5" fill="#5B6472" text-anchor="middle">
+    <text x="250" y="124">0</text>
+    <text x="409" y="124">250</text>
+    <text x="568" y="124">500</text>
+    <text x="727" y="124">750</text>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.06">
+    <line x1="250" y1="134" x2="250" y2="316"/>
+    <line x1="409" y1="134" x2="409" y2="316"/>
+    <line x1="568" y1="134" x2="568" y2="316"/>
+    <line x1="727" y1="134" x2="727" y2="316"/>
+  </g>
+
+  <!-- bars -->
+  <g>
+    <text x="230" y="181" text-anchor="end" class="d" font-size="13.5" fill="#B7C0CD">median</text>
+    <rect x="250" y="163" width="74.1" height="30" rx="6" fill="#34C9A2"/>
+    <text x="336" y="184" class="m" font-size="17" font-weight="700" fill="#34C9A2">116.4 ms</text>
+
+    <text x="230" y="231" text-anchor="end" class="d" font-size="13.5" fill="#B7C0CD">mean</text>
+    <rect x="250" y="213" width="235.2" height="30" rx="6" fill="#FF4200"/>
+    <text x="497" y="234" class="m" font-size="17" font-weight="700" fill="#FF7A45">369.6 ms</text>
+
+    <text x="230" y="281" text-anchor="end" class="d" font-size="13.5" fill="#B7C0CD">p80</text>
+    <rect x="250" y="263" width="203.6" height="30" rx="6" fill="#E49B2D"/>
+    <text x="465" y="284" class="m" font-size="17" font-weight="700" fill="#E49B2D">319.9 ms</text>
+  </g>
+
+  <!-- gate -->
+  <line x1="886.4" y1="134" x2="886.4" y2="316" stroke="#E49B2D" stroke-dasharray="5 5" stroke-width="1.6"/>
+  <text x="886.4" y="128" text-anchor="middle" class="m" font-size="10.5" fill="#E49B2D">1000 ms</text>
+  <text x="878" y="200" text-anchor="end" class="d" font-size="11.5" fill="#B7C0CD">board admission</text>
+  <text x="878" y="216" text-anchor="end" class="d" font-size="11.5" fill="#B7C0CD">median · mean · p80 ≤ 1000 ms</text>
+
+  <line x1="40" y1="342" x2="960" y2="342" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="40" y="368" class="d" font-size="12" fill="#8892A0">All three admitted statistics clear the gate with room to spare. The four post-processing levers add no inference latency.</text>
+  <text x="40" y="392" class="d" font-size="12" fill="#8892A0">Our latency is a disclosure, not a certification: the maintainers re-measure it privately on a held-out sample.</text>
+  <text x="40" y="410" class="m" font-size="10.5" fill="#5B6472">p95 ≈ 1,745 ms is shown by the board's tooling but is not part of the admission gate.</text>
+</svg>

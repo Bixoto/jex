@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="Evidence chain: batch-invariant serial inference leads to a bit-exact re-score by two independent scorers, which leads to published receipts and one-flag rollback. 140,178 of 140,178 requests complete, 0 unsupported, 0 errors.">
+  <defs>
+    <linearGradient id="ec-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#07090C"/>
+    </linearGradient>
+    <pattern id="ec-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+    <style>
+      .d{font-family:'Sofia Pro','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+      .m{font-family:'SFMono-Regular','JetBrains Mono','Cascadia Mono',Menlo,Consolas,monospace;}
+    </style>
+  </defs>
+
+  <rect width="1200" height="480" rx="20" fill="url(#ec-bg)"/>
+  <rect width="1200" height="480" rx="20" fill="url(#ec-grid)"/>
+  <rect x="0.5" y="0.5" width="1199" height="479" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+
+  <text x="40" y="52" class="d" font-size="23" font-weight="800" fill="#F4F6FA">The evidence chain</text>
+  <text x="40" y="78" class="d" font-size="13.5" fill="#8892A0">Every path is a pure function of (state, questions) plus frozen constants — and every number has a receipt.</text>
+
+  <!-- chevrons -->
+  <g fill="none" stroke="#5B6472" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M406 232 l14 14 l-14 14"/>
+    <path d="M796 232 l14 14 l-14 14"/>
+  </g>
+
+  <!-- node 1 -->
+  <g transform="translate(40,120)">
+    <rect x="0" y="0" width="360" height="210" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="359" height="209" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="360" height="4" rx="2" fill="#34C9A2"/>
+    <text x="22" y="36" class="m" font-size="12" letter-spacing="1.5" fill="#34C9A2">01</text>
+    <text x="22" y="74" class="d" font-size="17" font-weight="700" fill="#EDF0F5">Batch-invariant</text>
+    <text x="22" y="96" class="d" font-size="17" font-weight="700" fill="#EDF0F5">&amp; serial</text>
+    <text x="22" y="132" class="m" font-size="11.5" fill="#8892A0">VLLM_BATCH_INVARIANT=1</text>
+    <text x="22" y="152" class="m" font-size="11.5" fill="#8892A0">VLLM_ENABLE_V1_MULTIPROCESSING=0</text>
+    <text x="22" y="172" class="m" font-size="11.5" fill="#8892A0">greedy · warm-up 3 · tp=1</text>
+    <text x="22" y="192" class="d" font-size="11.5" fill="#8892A0">one request at a time</text>
+  </g>
+
+  <!-- node 2 -->
+  <g transform="translate(430,120)">
+    <rect x="0" y="0" width="360" height="210" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="359" height="209" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="360" height="4" rx="2" fill="#FF4200"/>
+    <text x="22" y="36" class="m" font-size="12" letter-spacing="1.5" fill="#FF4200">02</text>
+    <text x="22" y="74" class="d" font-size="17" font-weight="700" fill="#EDF0F5">Bit-exact re-score</text>
+    <text x="22" y="96" class="d" font-size="17" font-weight="700" fill="#EDF0F5">by two scorers</text>
+    <text x="22" y="132" class="d" font-size="11.5" fill="#8892A0">kit03 CLI and the in-process</text>
+    <text x="22" y="152" class="d" font-size="11.5" fill="#8892A0">score_run_v02 path both return</text>
+    <text x="22" y="180" class="m" font-size="16" font-weight="700" fill="#FF4200">decision_index 60.29</text>
+    <text x="22" y="198" class="m" font-size="11" fill="#8892A0">sha256 5003231c…ab9c7</text>
+  </g>
+
+  <!-- node 3 -->
+  <g transform="translate(820,120)">
+    <rect x="0" y="0" width="360" height="210" rx="14" fill="#0E1218"/>
+    <rect x="0.5" y="0.5" width="359" height="209" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="0" y="0" width="360" height="4" rx="2" fill="#34C9A2"/>
+    <text x="22" y="36" class="m" font-size="12" letter-spacing="1.5" fill="#34C9A2">03</text>
+    <text x="22" y="74" class="d" font-size="17" font-weight="700" fill="#EDF0F5">Receipts &amp;</text>
+    <text x="22" y="96" class="d" font-size="17" font-weight="700" fill="#EDF0F5">rollback</text>
+    <text x="22" y="132" class="d" font-size="11.5" fill="#8892A0">ladder · no-degrade receipt</text>
+    <text x="22" y="152" class="d" font-size="11.5" fill="#8892A0">provenance hashes on the code</text>
+    <text x="22" y="172" class="d" font-size="11.5" fill="#8892A0">the stored capture is never edited</text>
+    <text x="22" y="192" class="d" font-size="11.5" fill="#34C9A2">any lever off with one flag</text>
+  </g>
+
+  <!-- stat strip -->
+  <g transform="translate(40,354)">
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="275" height="86" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="85" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="44" class="m" font-size="22" font-weight="700" fill="#FF4200">140,178 / 140,178</text>
+      <text x="20" y="66" class="d" font-size="11.5" fill="#8892A0">requests complete</text>
+    </g>
+    <g transform="translate(295,0)">
+      <rect x="0" y="0" width="275" height="86" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="85" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="44" class="m" font-size="22" font-weight="700" fill="#34C9A2">0 · 0</text>
+      <text x="20" y="66" class="d" font-size="11.5" fill="#8892A0">unsupported · errors</text>
+    </g>
+    <g transform="translate(590,0)">
+      <rect x="0" y="0" width="275" height="86" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="85" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="44" class="m" font-size="22" font-weight="700" fill="#EDF0F5">4 moved</text>
+      <text x="20" y="66" class="d" font-size="11.5" fill="#8892A0">43 others bit-identical</text>
+    </g>
+    <g transform="translate(885,0)">
+      <rect x="0" y="0" width="275" height="86" rx="12" fill="#0C1015"/>
+      <rect x="0.5" y="0.5" width="274" height="85" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="44" class="m" font-size="22" font-weight="700" fill="#E49B2D">kit 62d2f51</text>
+      <text x="20" y="66" class="d" font-size="11.5" fill="#8892A0">edition 0.3 · vLLM 0.30.0</text>
+    </g>
+  </g>
+</svg>

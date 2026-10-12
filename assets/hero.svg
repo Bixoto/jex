@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 420" width="1240" height="420" role="img" aria-label="Jex 1.0 by Bixoto — a frozen decision engine. Public index 60.29 on Decision Index 0.3; frozen gemma-4-31B checkpoint; 140,178 of 140,178 requests complete.">
+  <defs>
+    <linearGradient id="hx-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E13"/>
+      <stop offset="1" stop-color="#05070A"/>
+    </linearGradient>
+    <radialGradient id="hx-glow" cx="0.88" cy="0.06" r="0.72">
+      <stop offset="0" stop-color="#FF4200" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#FF4200" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hx-glow2" cx="0.02" cy="1.02" r="0.62">
+      <stop offset="0" stop-color="#34C9A2" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34C9A2" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="hx-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <style>
+      .d{font-family:'Sofia Pro','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+      .m{font-family:'SFMono-Regular','JetBrains Mono','Cascadia Mono',Menlo,Consolas,monospace;}
+    </style>
+  </defs>
+
+  <rect width="1240" height="420" rx="20" fill="url(#hx-bg)"/>
+  <rect width="1240" height="420" rx="20" fill="url(#hx-grid)"/>
+  <rect width="1240" height="420" rx="20" fill="url(#hx-glow)"/>
+  <rect width="1240" height="420" rx="20" fill="url(#hx-glow2)"/>
+  <rect x="0.5" y="0.5" width="1239" height="419" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+
+  <!-- eyebrow -->
+  <g transform="translate(72,70)">
+    <rect x="0" y="-9" width="14" height="14" rx="4" fill="#FF4200"/>
+    <text x="26" y="2" class="m" font-size="14" letter-spacing="3.5" fill="#EDF0F5">BIXOTO</text>
+    <line x1="132" y1="-2" x2="176" y2="-2" stroke="#39414D" stroke-width="1"/>
+    <text x="188" y="2" class="m" font-size="12.5" letter-spacing="2.6" fill="#8892A0">DECISION ENGINE</text>
+  </g>
+
+  <!-- title -->
+  <text x="70" y="200" class="d" font-size="94" font-weight="800" letter-spacing="-2.5" fill="#F4F6FA">Jex <tspan fill="#FF4200">1.0</tspan></text>
+  <text x="74" y="244" class="d" font-size="21" fill="#B7C0CD">A frozen decision engine — engineered, not trained.</text>
+
+  <!-- stat row -->
+  <g transform="translate(74,318)">
+    <text x="0" y="0" class="m" font-size="34" font-weight="700" fill="#FF4200">60.29</text>
+    <text x="2" y="26" class="m" font-size="11" letter-spacing="1.8" fill="#8892A0">PUBLIC INDEX · DI 0.3</text>
+
+    <line x1="230" y1="-24" x2="230" y2="30" stroke="#2A323D"/>
+    <text x="262" y="0" class="m" font-size="30" font-weight="700" fill="#34C9A2">gemma-4-31B</text>
+    <text x="264" y="26" class="m" font-size="11" letter-spacing="1.8" fill="#8892A0">FROZEN · NO TRAINING</text>
+  </g>
+
+  <!-- readout card -->
+  <g transform="translate(786,74)">
+    <rect x="0" y="0" width="382" height="272" rx="16" fill="#0C1015" fill-opacity="0.92"/>
+    <rect x="0.5" y="0.5" width="381" height="271" rx="15.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="26" y="34" class="m" font-size="11.5" letter-spacing="2.2" fill="#8892A0">READOUT</text>
+    <text x="26" y="56" class="d" font-size="14" fill="#C7CFDA">one greedy step · a probability for every option</text>
+    <line x1="26" y1="72" x2="356" y2="72" stroke="#ffffff" stroke-opacity="0.08"/>
+
+    <!-- rows -->
+    <g class="m" font-size="14">
+      <text x="26" y="106" fill="#8A93A0">A</text>
+      <rect x="56" y="97" width="212" height="9" rx="4.5" fill="#1A2029"/>
+      <rect x="56" y="97" width="24" height="9" rx="4.5" fill="#4A5361"/>
+      <text x="356" y="106" text-anchor="end" fill="#6C7686" font-size="13">0.09</text>
+
+      <text x="26" y="146" fill="#8A93A0">B</text>
+      <rect x="56" y="137" width="212" height="9" rx="4.5" fill="#1A2029"/>
+      <rect x="56" y="137" width="34" height="9" rx="4.5" fill="#4A5361"/>
+      <text x="356" y="146" text-anchor="end" fill="#6C7686" font-size="13">0.13</text>
+
+      <text x="26" y="186" fill="#FF4200" font-weight="700">C</text>
+      <rect x="56" y="177" width="212" height="9" rx="4.5" fill="#1A2029"/>
+      <rect x="56" y="177" width="196" height="9" rx="4.5" fill="#FF4200"/>
+      <text x="356" y="186" text-anchor="end" fill="#FF7A45" font-size="13" font-weight="700">0.78</text>
+    </g>
+
+    <line x1="26" y1="214" x2="356" y2="214" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="31" cy="238" r="4" fill="#34C9A2"/>
+    <text x="46" y="242" class="m" font-size="11.5" fill="#8892A0">batch-invariant · serial · greedy</text>
+  </g>
+</svg>

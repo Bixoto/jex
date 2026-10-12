@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 214 46" width="214" height="46" role="img" aria-label="Bixoto">
+  <defs>
+    <style>
+      .d{font-family:'Sofia Pro','Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+    </style>
+  </defs>
+  <!-- stylised lowercase "b" mark (geometric, brand orange) -->
+  <g fill="none" stroke="#FF4200">
+    <rect x="4" y="3" width="12.5" height="40" rx="6.25" fill="#FF4200" stroke="none"/>
+    <circle cx="26.5" cy="29" r="12.5" stroke-width="11"/>
+  </g>
+  <text x="54" y="34" class="d" font-size="29" font-weight="700" letter-spacing="-0.5" fill="#FF4200">Bixoto</text>
+</svg>
